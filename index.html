@@ -1,50 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Phan Dinh Thai - Portfolio</title>
     <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css"> -->
     <!-- <script src="./assets/js/jquery-3.6.4.min.js"></script> -->
     <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
 </head>
-<body>
+
+<body id="home">
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
                     <a href="">
-                        <img src="./img/logo.png" alt="">
+                        <img src="./img/logoNew.png" alt="">
                     </a>
                 </div>
                 <ul class="menu">
-                    <li class="menu-item">
-                        <a href="">Home</a>
+                    <li class="item">
+                        <a href="#home">Home</a>
                     </li>
-                    <li class="menu-item">
+                    <li class="item">
                         <a href="#about">About</a>
                     </li>
-                    <li class="menu-item">
-                        <a href="">Skills</a>
+                    <li class="item">
+                        <a href="#skills">Skills</a>
                     </li>
-                    <li class="menu-item">
-                        <a href="">Projects</a>
+                    <li class="item">
+                        <a href="#projects">Projects</a>
                     </li>
-                    <li class="menu-item">
-                        <a href="">Contact</a>
+                    <li class="item">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+
+                <!--  tạo menu cho màn hình nhỏ  -->
+
+                <div class="open-menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <ul class="responsive-menu">
+                    <div class="close-responsive-menu">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </div>
+                    <li class="item">
+                        <a href="#home">Home</a>
+                    </li>
+                    <li class="item">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="item">
+                        <a href="#skills">Skills</a>
+                    </li>
+                    <li class="item">
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li class="item">
+                        <a href="#contact">Contact</a>
                     </li>
                 </ul>
             </nav>
 
 
+
             <div class="intro">
                 <div class="avatar">
-                    <img src="./img/avatar.png" alt="">
+                    <!-- <img src="./img/avatar.png" alt=""> -->
+                    <img src="./img/me.jpg" alt="Phan Dinh Thai's Avatar" style="border-radius: 50%;">
                 </div>
-                <h1 class="name">My Name</h1>
+                <h1 class="name">Phan Dinh Thai</h1>
                 <p class="desc">
-                    Fullstack developer and UI/UX designer
+                    Software Development Intern
                 </p>
                 <button class="btn-danger">
                     hire me
@@ -58,50 +92,43 @@
                 About Me
             </h2>
             <p class="desc">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus saepe voluptas molestias
-                laboriosam? Voluptatem, sunt ipsa repellat, tempora excepturi, eaque doloremque atque odit veniam
-                recusandae ea beatae assumenda amet consequatur.
+                I am a final-year Software Engineering student at Industrial University of Ho Chi Minh City. Passionate
+                about coding and problem-solving, I am actively seeking an internship opportunity as a Software
+                Developer.
             </p>
             <div class="info">
                 <div class="box-left">
-                    <img src="./img/about-me-img.png" alt="">
+                    <!-- <img src="./img/about-me-img.png" alt=""> -->
+                    <img src="./img/me.jpg" alt="About Me Image" style="border-radius: 10px;">
                 </div>
                 <div class="box-right">
                     <h3>Hello</h3>
-                    <h2>My name is <span>ABCCCCCCCCCC</span></h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus tempora dolore rerum nulla
-                        voluptate, laborum amet vitae ducimus numquam inventore dolorum ad eaque minima, delectus
-                        praesentium accusantium blanditiis aliquid. Unde similique molestias ex dolorum iste quidem,
-                        veritatis suscipit eos distinctio!</p>
-                    <button class="btn-danger">Contact</button>
+                    <h2>My name is <span>Phan Đình Thái</span></h2>
+                    <ul class="personal-info">
+                        <li><strong>Date of birth: </strong> 15/08/2002</li>
+                        <li><strong>Age: </strong> 22</li>
+                        <li><strong>Email: </strong> <a
+                                href="mailto:phandinhthai012@gmail.com">phandinhthai012@gmail.com</a></li>
+                        <li><strong>Phone: </strong> 0866 952 340</li>
+                        <li><strong>Address: </strong> TP. Hồ Chí Minh, Việt Nam</li>
+                    </ul>
+                    <p>
+                        Tôi là sinh viên năm cuối ngành Kỹ thuật phần mềm tại Đại học Công nghiệp TP.HCM. Tôi yêu thích
+                        lập trình, đam mê khám phá công nghệ mới và luôn sẵn sàng học hỏi để phát triển bản thân. Mục
+                        tiêu của tôi là trở thành một lập trình viên có chuyên môn vững vàng, làm việc hiệu quả trong
+                        môi trường chuyên nghiệp và đóng góp vào những dự án thực tế mang lại giá trị.
+                    </p>
+                    <button class="btn-danger" onclick="window.location.href='#contact'">Contact Me</button>
                 </div>
             </div>
         </div>
     </section>
-    <section id="Skill">
+    <!-- <section id="Skill">
         <div class="container">
             <h2 class="section-title">
                 My Skill
             </h2>
             <ul class="list-skills">
-                <li class="skill">
-                    <h3>HTML</h3>
-                    <div class="process-bar">
-                        <div class="process"></div>
-                    </div>
-                </li>
-                <li class="skill">
-                    <h3>CSS</h3>
-                    <div class="process-bar">
-                        <div class="process"></div>
-                    </div>
-                </li>
-                <li class="skill">
-                    <h3>Javascript</h3>
-                    <div class="process-bar">
-                        <div class="process"></div>
-                    </div>
-                </li>
                 <li class="skill">
                     <h3>NodeJS</h3>
                     <div class="process-bar">
@@ -110,8 +137,51 @@
                 </li>
             </ul>
         </div>
+    </section> -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">
+                My Skills
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Ngôn ngữ & Framework</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Java (Spring Boot)</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Express.js</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cơ sở dữ liệu</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SQL Server</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Cloud</h3>
+                    <ul>
+                        <li>AWS (EC2, S3, RDS, IAM)</li>
+                        <li>Docker</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Công cụ khác</h3>
+                    <ul>
+                        <li>Zegocloud (Video SDK)</li>
+                        <li>Firebase Auth</li>
+                        <li>Postman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="project">
+    <section id="projects">
         <div class="container">
             <h2 class="section-title">
                 Project
@@ -119,34 +189,126 @@
             <ul class="projects">
                 <li class="item">
                     <div class="image">
-                        <img src="./img/project_1.png" alt="">
+                        <img src="./img/chatapp.png" alt="">
                     </div>
-                    <h2 class="name">E-commerce</h2>
+                    <h2 class="name">Chat App (ZaloClone)</h2>
                     <p class="desc">
-                        Lorem ipsum dolor,
-                        sit amet consectetur adipisicing elit.
-                        Quasi deserunt repudiandae provident non fuga, 
-                        rem iste quibusdam unde magnam atque explicabo 
-                        exercitationem eveniet voluptates illum nisi minus laborum vero velit.
+                        Thiết kế và triển khai ứng dụng nhắn tin thời gian thực với chat cá nhân/nhóm, chia sẻ
+                        media.<br>
+                        Xây dựng RESTful APIs bằng Node.js, Express, MongoDB; tích hợp Socket.IO cho nhắn tin thời gian
+                        thực.<br>
+                        Giao diện web được phát triển bằng React.js.
                     </p>
-                    <button class="btn-danger">See more</button>
+                    <ul class="project-detail">
+                        <li><strong>Thời gian:</strong> 01/2025 – 05/2025</li>
+                        <li><strong>Vai trò:</strong> Project Leader & Fullstack Developer</li>
+                        <li><strong>Team:</strong> 5 thành viên</li>
+                        <li><strong>Kiến trúc:</strong> Client – Server</li>
+                        <li><strong>Công nghệ:</strong> Node.js, Express, MongoDB, Socket.IO, React.js, AWS S3,
+                            Zegocloud, Render</li>
+                        <li><strong>Link GitHub:</strong>
+                            <a href="https://github.com/phandinhthai012/ZaloChatApp"
+                                target="_blank">github.com/phandinhthai012/ZaloChatApp</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <a href="https://github.com/phandinhthai012/ZaloChatApp" target="_blank" class="btn-danger">See
+                        More</a>
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="./img/project_2.png" alt="">
+                        <img src="./img/idev.png" alt="">
                     </div>
-                    <h2 class="name">E-commerce</h2>
+                    <h2 class="name">iDev4rum – IUH Developers Forum</h2>
                     <p class="desc">
-                        Lorem ipsum dolor,
-                        sit amet consectetur adipisicing elit.
-                        Quasi deserunt repudiandae provident non fuga, 
-                        rem iste quibusdam unde magnam atque explicabo 
-                        exercitationem eveniet voluptates illum nisi minus laborum vero velit.
+                        Xây dựng dịch vụ người dùng (User Service) và giao diện quản trị (Admin Interface) trong kiến
+                        trúc microservice.<br>
+                        Tích hợp xác thực người dùng bằng JWT, triển khai qua Docker & GitLab CI/CD.<br>
+                        Giao diện phát triển bằng NextJS và React.
                     </p>
-                    <button class="btn-danger">See more</button>
+                    <ul class="project-detail">
+                        <li><strong>Thời gian:</strong> 12/2024 – 05/2025</li>
+                        <li><strong>Vai trò:</strong> Developer (User Service & Admin Interface)</li>
+                        <li><strong>Team:</strong> 4 thành viên</li>
+                        <li><strong>Kiến trúc:</strong> Microservice</li>
+                        <li><strong>Công nghệ:</strong> NodeJS, NextJS, React, MongoDB, Redis, RabbitMQ, Docker,
+                            TailwindCSS, GitLab CI/CD</li>
+                        <li><strong>Link GitHub:</strong>
+                            <a href="https://github.com/kennex666/iDevForum-KTPM"
+                                target="_blank">github.com/kennex666/iDevForum-KTPM</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <a href="https://github.com/kennex666/iDevForum-KTPM" target="_blank" class="btn-danger">See
+                        More</a>
+
+                </li>
+                <li class="item">
+                    <div class="image">
+                        <img src="./img/karaoke01.png" alt="">
+                    </div>
+                    <h2 class="name">Karaoke Management System</h2>
+                    <p class="desc">
+                        Phát triển giao diện người dùng bằng Java Swing và WindowBuilder.<br>
+                        Xử lý logic đặt phòng, tính giờ, thanh toán, quản lý khách hàng và gửi email thông báo bằng
+                        JavaMail.<br>
+                        Kết nối dữ liệu và xử lý giao dịch với SQL Server.
+                    </p>
+                    <ul class="project-detail">
+                        <li><strong>Thời gian:</strong> 08/2023 – 11/2023</li>
+                        <li><strong>Vai trò:</strong> Developer</li>
+                        <li><strong>Team:</strong> 3 thành viên</li>
+                        <li><strong>Kiến trúc:</strong> Monolithic</li>
+                        <li><strong>Công nghệ:</strong> Java, Swing, WindowBuilder, SQL Server, JDBC, JavaMail</li>
+                        <li><strong>Link GitHub:</strong>
+                            <a href="https://github.com/phandinhthai012/quan_li_Karaoke"
+                                target="_blank">github.com/phandinhthai012/quan_li_Karaoke</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <a href="https://github.com/phandinhthai012/quan_li_Karaoke" target="_blank" class="btn-danger">See
+                        More</a>
                 </li>
             </ul>
         </div>
     </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-wrapper">
+                <!-- Thông tin liên hệ -->
+                <div class="info contact-info">
+                    <div>
+                        <p><strong>Họ tên:</strong> Phan Đình Thái</p>
+                        <p><strong>Email:</strong> <a
+                                href="mailto:phandinhthai012@gmail.com">phanđinhthai012@gmail.com</a></p>
+                        <p><strong>Điện thoại:</strong> 0901 234 567</p>
+                        <p><strong>Địa chỉ:</strong> Gò Vấp, TP. Hồ Chí Minh</p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/phandinhthai012"
+                                target="_blank">github.com/phandinhthai012</a></p>
+                    </div>
+                </div>
+
+                <!-- Form liên hệ -->
+                <!-- Form liên hệ -->
+                <form class="form-contact">
+                    <input type="text" name="name" placeholder="Họ và tên" required>
+                    <input type="email" name="email" placeholder="Email của bạn" required>
+                    <textarea name="message" rows="6" placeholder="Nội dung cần trao đổi..." required></textarea>
+                    <button type="submit" class="btn-danger">Gửi</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- font lib  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Js custom file -->
+    <script src="./script-jquery.js"></script>
 </body>
+
 </html>

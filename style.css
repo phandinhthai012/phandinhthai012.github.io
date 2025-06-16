@@ -67,7 +67,46 @@ nav .menu .menu-item:hover a {
     color: rgb(163, 156, 156);
 }
 
+nav .open-menu {
+    /*  ddược hiển thị khi màn hình nhỏ */
+    color:#fff;
+    font-size: 35px;
+    display: none;
 
+}
+
+nav .responsive-menu {
+    /*  ddược hiển thị khi màn hình nhỏ */
+    position:absolute;
+    background:rgb(2,1,4);
+    width:100%;
+    left:0;
+    top:0;
+    padding:20px;
+    display: none;
+
+    
+}
+
+nav .responsive-menu .item {
+    height: 70px;
+    text-align: center;
+}
+nav .responsive-menu  a {
+    color:#fff;
+    transition:0.2s all;
+}
+nav .responsive-menu .item:hover a {
+    color:#fff;
+    color:rgb(163,156,156);
+}
+
+nav .responsive-menu .close-responsive-menu {
+    position:absolute;
+    color:#fff;
+    right: 20px;
+    font-size:25px;
+}
 
 
 
@@ -120,6 +159,7 @@ nav .menu .menu-item:hover a {
     margin-top: 24px;
     /* color: var(--text-color); */
     color: rgba(255,255,255,0.5);
+
 }
 
 /*dung chung*/
@@ -165,6 +205,13 @@ nav .menu .menu-item:hover a {
     width:50px;
 }
 
+/* logo */
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
 /* about */
 
@@ -199,13 +246,13 @@ nav .menu .menu-item:hover a {
     height: 35px;
 }
 
-#Skill .container {
-    margin-top: 100px;
+#skills .container {
+    margin-top:100px;
     min-height: 400px;
-    padding-bottom: 20px;
+    padding: 0px 100px;
 }
 
-.list-skills {
+/* .list-skills {
 
 }
 .skill {
@@ -238,37 +285,134 @@ nav .menu .menu-item:hover a {
 }
 .skill:nth-child(4) .process {
     width: 40%;
-}   
+}    */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.skill-category h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.skill-category ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--text-color);
+}
 
 
 
-#project .container {
+
+
+/* projects */
+
+#projects .container {
     padding: 0px 100px;
 }
 
 .projects {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* grid-template-columns: repeat(2, 1fr); */
     gap: 50px;
 }
 .projects .item {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     color: #fff;
+    padding: 12px;
 }
 
 .projects .item .name {
-    margin-top: 24px;
+    margin-top: 20px;
 }
 
 .projects .item .desc {
     margin: 10px 0px;
     max-width: 90%;
     color: var(--text-color);
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 .projects .item .btn-danger {
     width:100px;
     height: 40px;
     margin:0px;
 }
+
+.projects .project-detail {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.projects .project-detail li {
+    margin-bottom: 6px;
+    color: var(--text-color);
+    
+}
+
+
+
+/* contact */
+
+#contact .container{
+    padding:0px 100px;
+}
+
+
+#contact .contact-info {
+    margin-top: 40px;
+    color: var(--text-color);
+    font-size: 18px;              /* Tăng cỡ chữ */
+    line-height: 1.8;             /* Tăng khoảng cách dòng */
+}
+
+#contact .contact-info p {
+    margin-bottom: 12px;          /* Khoảng cách giữa các dòng */
+}
+
+#contact .contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    margin-top:100px;
+}
+.form-contact input {
+    width: 70%;
+    height: 50px;
+    background:transparent;
+    border:none;
+    outline:none;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    color:var(--text-color);
+}
+
+.form-contact textarea {
+    background:transparent;
+    border:1px solid var(--border-color);
+    resize:none;
+    padding:10px;
+    color:var(--text-color);
+    outline:none;
+}
+.form-contact .btn-danger {
+    width: 100px;
+    height: 40px;
+    margin:10px 0px;
+}
+
