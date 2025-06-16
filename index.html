@@ -80,7 +80,7 @@
                 <p class="desc">
                     Software Development Intern
                 </p>
-                <button class="btn-danger">
+                <button class="btn-danger" onclick="alert('please contact me via email or phone in the About section to discuss internship opportunities.')">
                     hire me
                 </button>
             </div>
@@ -99,7 +99,8 @@
             <div class="info">
                 <div class="box-left">
                     <!-- <img src="./img/about-me-img.png" alt=""> -->
-                    <img src="./img/me.jpg" alt="About Me Image" style="border-radius: 10px;">
+                    <!-- <img src="./img/me.jpg" alt="About Me Image" style="border-radius: 10px;"> -->
+                     <img src="./img/avatar.jpg" alt="About Me Image" style="border-radius: 10px;max-width: 350px; height: auto;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); object-fit: cover; border: 2px solid #ddd; transition: transform 0.3s;">
                 </div>
                 <div class="box-right">
                     <h3>Hello</h3>
@@ -291,7 +292,7 @@
 
                 <!-- Form liên hệ -->
                 <!-- Form liên hệ -->
-                <form class="form-contact">
+                <form class="form-contact" onsubmit="alert('This feature is not available yet.'); return false;">
                     <input type="text" name="name" placeholder="Họ và tên" required>
                     <input type="email" name="email" placeholder="Email của bạn" required>
                     <textarea name="message" rows="6" placeholder="Nội dung cần trao đổi..." required></textarea>
