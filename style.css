@@ -6,8 +6,8 @@
 
 
 :root {
-    /* --bg-color:#18191A; */
-    --bg-color: #2C2F33;
+    --bg-color:#18191A;
+    /* --bg-color: #2C2F33; */
     --danger-color:#F93c47;
     --text-color:rgba(255, 255, 255, 0.948);
     --border-color:rgba(255,255,255,0.8);
