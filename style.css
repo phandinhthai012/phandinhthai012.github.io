@@ -1,0 +1,274 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg-color:#18191A;
+    --danger-color:#F93c47;
+    --text-color:rgba(255,255,255,0.5);
+    --border-color:rgba(255,255,255,0.5);
+}
+body {
+    min-height: 100vh;
+    background:var(--bg-color);
+    font-family: "Poppins",sans-serif;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+.container {
+    max-width: 1280px;
+    margin: 0px auto;
+}
+header {
+    width: 100%;
+}
+
+header .container {
+    min-height: 735px;
+    background: linear-gradient(0deg,rgba(0,0,0,0.93), rgba(0,0,0,0.94)),url(./img/banner.png);
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 0px 30px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+nav .menu {
+    display: flex;
+    gap: 35px;
+}
+
+nav .menu a {
+    color: #fff;
+    transition: 0.3s all;
+}
+nav .menu .menu-item:hover a {
+    color: rgb(163, 156, 156);
+}
+
+
+
+
+
+/* intro */
+
+.intro {
+    padding-top: 120px;
+}
+.intro .avatar {
+    position: relative;
+    width: 158px;
+    height: 158px;
+    border-radius: 50%;
+    border: 10px solid #F93c47;
+    margin: 0px auto;
+    margin-top: 80px;
+}
+
+.intro .avatar::before {
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid #F93c47;
+    border-radius: 50%;
+    animation: anime 2s linear infinite;
+}
+
+@keyframes anime {
+    0%{
+        width:100%;
+        height: 100%;
+    }
+    100%{
+        width:200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+.intro .name {
+    text-align: center;
+    color: #fff;
+    margin-top: 100px;
+}
+.intro .desc {
+    text-align: center;
+    margin-top: 24px;
+    /* color: var(--text-color); */
+    color: rgba(255,255,255,0.5);
+}
+
+/*dung chung*/
+.btn-danger {
+    background:var(--danger-color);
+    border-radius: 5px;
+    width: 155px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+.intro .btn-danger {
+    margin: 0px auto;
+    margin-top: 55px;
+    cursor: pointer;
+}
+
+.section-title {
+    /* section-title */
+    text-align: center;
+    margin-top: 62px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+}
+.section-title:before {
+    content :"";
+    position:absolute;
+    width:0px;
+    height: 6px;
+    background:var(--danger-color);
+    bottom:-10px;
+    transition:0.5s all;
+}
+.section-title:hover:before {
+    width:50px;
+}
+
+
+/* about */
+
+#about .container {
+    min-height:400px;
+    padding: 0px 100px;
+} 
+#about .desc {
+    color:var(--text-color);
+    margin-top:30px;
+    text-align: center;
+}
+.info {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    margin-top: 40px;
+    color: #fff;
+}
+.box-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--text-color);
+}
+.box-right span {
+    color: var(--danger-color);
+}
+.box-right .btn-danger {
+    margin: 0px;
+    width: 100px;
+    height: 35px;
+}
+
+#Skill .container {
+    margin-top: 100px;
+    min-height: 400px;
+    padding-bottom: 20px;
+}
+
+.list-skills {
+
+}
+.skill {
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 32px;
+}
+.skill h3 {
+    color: #fff;
+    font-weight: 600;
+}
+.skill .process-bar {
+    width: 100%;
+    height: 18px;
+    border-radius: 20px;
+    margin-top: 18px;
+    background: #fff;
+}
+.skill .process {
+    width: 70%;
+    height:18px;
+    border-radius: 20px;
+    background: var(--danger-color);
+}
+.skill:nth-child(2) .process {
+    width: 70%;
+}
+.skill:nth-child(3) .process {
+    width: 50%;
+}
+.skill:nth-child(4) .process {
+    width: 40%;
+}   
+
+
+
+#project .container {
+    padding: 0px 100px;
+}
+
+.projects {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 50px;
+}
+.projects .item {
+    margin-bottom: 32px;
+    color: #fff;
+}
+
+.projects .item .name {
+    margin-top: 24px;
+}
+
+.projects .item .desc {
+    margin: 10px 0px;
+    max-width: 90%;
+    color: var(--text-color);
+    font-size: 18px;
+}
+.projects .item .btn-danger {
+    width:100px;
+    height: 40px;
+    margin:0px;
+}
