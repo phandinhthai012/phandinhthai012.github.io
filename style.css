@@ -163,6 +163,7 @@ nav .responsive-menu .close-responsive-menu {
     margin-top: 20px;
     color: var(--text-color);
     font-size: 20px;
+    line-height: 0.2;
     /* color: rgba(255,255,255,0.5); */
 
 }
@@ -380,7 +381,21 @@ nav .responsive-menu .close-responsive-menu {
     
 }
 
+.projects .project-detail .task-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-left: 16px;
+    margin-top: 8px;
+}
+.projects .project-detail .task-list li {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    list-style-type: disc;
 
+}
 
 /* contact */
 
