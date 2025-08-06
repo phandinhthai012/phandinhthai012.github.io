@@ -1,384 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phan Dinh Thai - Portfolio</title>
-    <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css"> -->
-    <!-- <script src="./assets/js/jquery-3.6.4.min.js"></script> -->
-    <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./responsive.css">
-    <link rel="icon" href="./img/logoNew.png" type="image/x-icon">
+    <meta name="description" content="Phan Đình Thái - Software Development Intern Portfolio">
+    <title>Phan Đình Thái - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        .about, .skills, .projects, .contact {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .skills ul li {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .project-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .project-card-content {
+            padding: 1rem;
+        }
+        .project-card h3 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+        .project-card p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .project-card .details {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .project-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+        .contact p {
+            margin: 0.5rem 0;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #2c3e50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
-<body id="home">
+<body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="">
-                        <img src="./img/logoNew.png" alt="">
-                    </a>
-                </div>
-                <ul class="menu">
-                    <li class="item">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="item">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="item">
-                        <a href="#skills">Skills</a>
-                    </li>
-                    <li class="item">
-                        <a href="#projects">Projects</a>
-                    </li>
-                    <li class="item">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-
-
-                <!--  tạo menu cho màn hình nhỏ  -->
-
-                <div class="open-menu">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-
-                <ul class="responsive-menu">
-                    <div class="close-responsive-menu">
-                        <ion-icon name="close-outline"></ion-icon>
-                    </div>
-                    <li class="item">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="item">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="item">
-                        <a href="#skills">Skills</a>
-                    </li>
-                    <li class="item">
-                        <a href="#projects">Projects</a>
-                    </li>
-                    <li class="item">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-
-
-
-            <div class="intro">
-                <div class="avatar">
-                    <!-- <img src="./img/avatar.png" alt=""> -->
-                    <img src="./img/me.jpg" alt="Phan Dinh Thai's Avatar" style="border-radius: 50%;">
-                </div>
-                <h1 class="name">Phan Dinh Thai</h1>
-                <p class="desc">
-                    Software Development Intern
-                </p>
-                <button class="btn-danger"
-                    onclick="alert('please contact me via email or phone in the About section to discuss internship opportunities.')">
-                    hire me
-                </button>
-            </div>
-        </div>
+        <h1>Phan Đình Thái</h1>
+        <p>Software Development Intern</p>
     </header>
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">
-                About Me
-            </h2>
-            <p class="desc">
-                I am a final-year Software Engineering student at Industrial University of Ho Chi Minh City. Passionate
-                about coding and problem-solving, I am actively seeking an internship opportunity as a Software
-                Developer.
-            </p>
-            <div class="info">
-                <div class="box-left">
-                    <!-- <img src="./img/about-me-img.png" alt=""> -->
-                    <!-- <img src="./img/me.jpg" alt="About Me Image" style="border-radius: 10px;"> -->
-                    <img src="./img/avatar.jpg" alt="About Me Image"
-                        style="border-radius: 10px;max-width: 350px; height: auto;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); object-fit: cover; border: 2px solid #ddd; transition: transform 0.3s;">
+
+    <div class="container">
+        <div class="section about">
+            <h2>About Me</h2>
+            <p>I am a final-year Software Engineering student at Industrial University of Ho Chi Minh City. Passionate about coding and problem-solving, I am actively seeking an internship opportunity as a Software Developer. My goal is to become a skilled programmer, working efficiently in a professional environment and contributing to impactful projects.</p>
+            <p><strong>Date of Birth:</strong> 02/01/2003<br>
+               <strong>Age:</strong> 22<br>
+               <strong>Email:</strong> phandinhthai012@gmail.com<br>
+               <strong>Phone:</strong> 0866 952 340<br>
+               <strong>Address:</strong> Gò Vấp, TP. Hồ Chí Minh, Việt Nam</p>
+        </div>
+
+        <div class="section skills">
+            <h2>My Skills</h2>
+            <h3>Languages & Frameworks</h3>
+            <ul>
+                <li>Node.js</li>
+                <li>Java (Spring Boot)</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React.js</li>
+                <li>Express.js</li>
+            </ul>
+            <h3>Databases</h3>
+            <ul>
+                <li>MySQL</li>
+                <li>SQL Server</li>
+                <li>MongoDB</li>
+            </ul>
+            <h3>DevOps & Cloud</h3>
+            <ul>
+                <li>AWS (EC2, S3, RDS, IAM)</li>
+                <li>Docker</li>
+                <li>Git</li>
+            </ul>
+            <h3>Other Tools</h3>
+            <ul>
+                <li>Zegocloud (Video SDK)</li>
+                <li>Firebase Auth</li>
+                <li>Postman</li>
+            </ul>
+        </div>
+
+        <div class="section projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="img/chatapp.png" alt="ForTH Chat">
+                    <div class="project-card-content">
+                        <h3>ForTH Chat</h3>
+                        <p>A cross-platform messaging app (web, mobile) similar to Zalo, supporting real-time communication.</p>
+                        <div class="details">
+                            <p><strong>Time:</strong> 01/2025 – 05/2025</p>
+                            <p><strong>Role:</strong> Project Leader & Developer (BE & FE)</p>
+                            <p><strong>Tasks:</strong> Designed backend (Node.js, Express, MongoDB) and frontend (ReactJS, React Native). Developed RESTful APIs with Socket.IO and optimized MongoDB.</p>
+                            <p><strong>Team:</strong> 5 members</p>
+                            <p><strong>Architecture:</strong> Client-Server</p>
+                            <p><strong>Technologies:</strong> Node.js, MongoDB, Socket.IO, React.js, React Native, Git, AWS S3, Zegocloud, Render</p>
+                            <p><strong>GitHub:</strong> <a href="https://github.com/phandinhthai012/ZaloChatApp" target="_blank">View on GitHub</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="box-right">
-                    <h3>Hello</h3>
-                    <h2>My name is <span>Phan Đình Thái</span></h2>
-                    <ul class="personal-info">
-                        <li><strong>Date of birth: </strong> 02/01/2003</li>
-                        <li><strong>Age: </strong> 22</li>
-                        <li><strong>Email: </strong> <a
-                                href="mailto:phandinhthai012@gmail.com">phandinhthai012@gmail.com</a></li>
-                        <li><strong>Phone: </strong> 0866 952 340</li>
-                        <li><strong>Address: </strong> Gò Vấp, TP. Hồ Chí Minh, Việt Nam</li>
-                    </ul>
-                    <p>
-                        Tôi là sinh viên năm cuối ngành Kỹ thuật phần mềm tại Đại học Công nghiệp TP.HCM. Tôi yêu thích
-                        lập trình, đam mê khám phá công nghệ mới và luôn sẵn sàng học hỏi để phát triển bản thân. Mục
-                        tiêu của tôi là trở thành một lập trình viên có chuyên môn vững vàng, làm việc hiệu quả trong
-                        môi trường chuyên nghiệp và đóng góp vào những dự án thực tế mang lại giá trị.<br><br>
-                        Mong muốn được đóng góp vào sự phát triển của công ty, đồng thời không ngừng học hỏi và nâng cao
-                        kiến thức, kỹ năng mỗi ngày.
-                    </p>
-                    <button class="btn-danger" onclick="window.location.href='#contact'">Contact Me</button>
+                <div class="project-card">
+                    <img src="img/idev.png"
+                        alt="iDev4rum">
+                    <div class="project-card-content">
+                        <h3>iDev4rum – IUH Developers Forum</h3>
+                        <p>A technology forum for students to share information, built with microservices architecture.</p>
+                        <div class="details">
+                            <p><strong>Time:</strong> 12/2024 – 05/2025</p>
+                            <p><strong>Role:</strong> Developer (User Service & Admin Interface)</p>
+                            <p><strong>Tasks:</strong> Developed backend services (User Service, API Gateway, Auth) and admin interface. Integrated JWT authentication and deployed via Docker & GitLab CI/CD.</p>
+                            <p><strong>Team:</strong> 4 members</p>
+                            <p><strong>Architecture:</strong> Microservice</p>
+                            <p><strong>Technologies:</strong> NodeJS, NextJS, React, MongoDB, Redis, RabbitMQ, Docker, TailwindCSS, GitLab CI/CD</p>
+                            <p><strong>GitHub:</strong> <a href="https://github.com/kennex666/iDevForum-KTPM" target="_blank">View on GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/cakeShop.png" alt="The Cake Shop">
+                    <img src="img/cakeShop2.png" alt="The Cake Shop">
+                    <div class="project-card-content">
+                        <h3>The Cake Shop</h3>
+                        <p>An e-commerce platform for selling cakes, supporting user registration, ordering, and management.</p>
+                        <div class="details">
+                            <p><strong>Time:</strong> 08/2024 – 12/2024</p>
+                            <p><strong>Role:</strong> Project Leader & Developer (BE & FE)</p>
+                            <p><strong>Tasks:</strong> Developed backend with Spring MVC, Spring Security, Hibernate, and SQL Server. Created responsive web interface using HTML, CSS, and JSP.</p>
+                            <p><strong>Team:</strong> 3 members</p>
+                            <p><strong>Architecture:</strong> Monolithic</p>
+                            <p><strong>Technologies:</strong> Java, Spring Framework (MVC, Security, JDBC, ORM/Hibernate), JSP, HTML, CSS, SQL Server, Jakarta Servlet</p>
+                            <p><strong>GitHub:</strong> <a href="https://github.com/phandinhthai012/TheCakeShop-LTWWW" target="_blank">View on GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/karaoke01.png" alt="Karaoke Management System">
+                    <div class="project-card-content">
+                        <h3>Karaoke Management System</h3>
+                        <p>A system for managing karaoke rooms, including booking, payment, and customer management.</p>
+                        <div class="details">
+                            <p><strong>Time:</strong> 08/2023 – 11/2023</p>
+                            <p><strong>Role:</strong> Developer</p>
+                            <p><strong>Tasks:</strong> Developed UI with Java Swing and WindowBuilder. Handled booking logic, payment, customer management, and email notifications via JavaMail.</p>
+                            <p><strong>Team:</strong> 3 members</p>
+                            <p><strong>Architecture:</strong> Monolithic</p>
+                            <p><strong>Technologies:</strong> Java, Swing, WindowBuilder, SQL Server, JDBC, JavaMail</p>
+                            <p><strong>GitHub:</strong> <a href="https://github.com/phandinhthai012/quan_li_Karaoke" target="_blank">View on GitHub</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- <section id="Skill">
-        <div class="container">
-            <h2 class="section-title">
-                My Skill
-            </h2>
-            <ul class="list-skills">
-                <li class="skill">
-                    <h3>NodeJS</h3>
-                    <div class="process-bar">
-                        <div class="process"></div>
-                    </div>
-                </li>
-            </ul>
+
+        <div class="section contact">
+            <h2>Contact</h2>
+            <p><strong>Name:</strong> Phan Đình Thái<br>
+               <strong>Email:</strong> phandinhthai012@gmail.com<br>
+               <strong>Phone:</strong> 0866 952 340<br>
+               <strong>Address:</strong> Gò Vấp, TP. Hồ Chí Minh<br>
+               <strong>GitHub:</strong> <a href="https://github.com/phandinhthai012" target="_blank">github.com/phandinhthai012</a></p>
         </div>
-    </section> -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">
-                My Skills
-            </h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Ngôn ngữ & Framework</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Java (Spring Boot)</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>React.js</li>
-                        <li>Express.js</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Cơ sở dữ liệu</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>SQL Server</li>
-                        <li>MongoDB</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>DevOps & Cloud</h3>
-                    <ul>
-                        <li>AWS (EC2, S3, RDS, IAM)</li>
-                        <li>Docker</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Công cụ khác</h3>
-                    <ul>
-                        <li>Zegocloud (Video SDK)</li>
-                        <li>Firebase Auth</li>
-                        <li>Postman</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">
-                Project
-            </h2>
-            <ul class="projects">
-                <li class="item">
-                    <div class="image">
-                        <img src="./img/chatapp.png" alt="">
-                    </div>
-                    <h2 class="name">ForTH Chat</h2>
-                    <p class="desc">
-                        Ứng dụng nhắn tin đa nền tảng (web, di động) hỗ trợ thời gian thực tương tự Zalo, sử dụng
-                        Node.js, MongoDB, Socket.IO, ReactJS và React Native.
-                    </p>
-                    <!-- <p class="desc">
-                        Thiết kế cấu trúc thư mục cho Backend (Node.js, Express, MongoDB) và Frontend (ReactJS, React Native).<br><br>
-                        Phát triển API RESTful (Express) tích hợp Socket.IO và xây dựng MongoDB để tăng hiệu suất và bảo mật.<br><br>
-                        Xây dựng giao diện web (ReactJS) và di động (React Native), tối ưu hóa trải nghiệm người dùng.<br><br>
-                    </p> -->
-                    <ul class="project-detail">
-                        <li><strong>Thời gian:</strong> 01/2025 – 05/2025</li>
-                        <li><strong>Vai trò:</strong> Project Leader & Developer (BE & FE)</li>
-                        <li><strong>Nhiệm vụ:</strong>
-                            <ul class="task-list">
-                                <li>Thiết kế cấu trúc thư mục Backend (Node.js, Express, MongoDB) và Frontend (ReactJS,
-                                    React Native).</li>
-                                <li>Phát triển API RESTful tích hợp Socket.IO và tối ưu MongoDB cho hiệu suất, bảo mật.
-                                </li>
-                                <li>Xây dựng giao diện web (ReactJS) và di động (React Native), tối ưu trải nghiệm người
-                                    dùng.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Team:</strong> 5 thành viên</li>
-                        <li><strong>Kiến trúc:</strong> Client – Server</li>
-                        <li><strong>Công nghệ:</strong> Node.js, MongoDB, Socket.IO, React.js, React Native, Git, AWS
-                            S3, Zegocloud, Render</li>
-                        <li><strong>Link GitHub:</strong>
-                            <a href="https://github.com/phandinhthai012/ZaloChatApp"
-                                target="_blank">github.com/phandinhthai012/ZaloChatApp</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <a href="https://github.com/phandinhthai012/ZaloChatApp" target="_blank" class="btn-danger">See
-                        More</a>
-                </li>
-                <li class="item">
-                    <div class="image">
-                        <img src="./img/idev.png" alt="">
-                    </div>
-                    <h2 class="name">iDev4rum – IUH Developers Forum</h2>
-                    <p class="desc"> Diễn đàn công nghệ dành cho sinh viên để chia sẻ thông tin, sử dụng Node.js,
-                        Next.js, React, MongoDB và áp dụng kiến trúc microservices.
-                        <!-- Phát triển các dịch vụ backend (User Service, API Gateway, Auth) và xây dựng giao diện quản trị
-                        trong kiến
-                        trúc microservice.<br><br>
-                        Tích hợp xác thực người dùng bằng JWT, triển khai qua Docker & GitLab CI/CD.<br><br>
-                        Giao diện phát triển bằng NextJS và React.<br><br> -->
+    </div>
 
-                    </p>
-                    <ul class="project-detail">
-                        <li><strong>Thời gian:</strong> 12/2024 – 05/2025</li>
-                        <li><strong>Vai trò:</strong> Developer (User Service & Admin Interface)</li>
-                        <li><strong>Nhiệm vụ:</strong>
-                            <ul class="task-list">
-                                <li>Phát triển các dịch vụ backend (User Service, API Gateway, Auth) và xây dựng giao
-                                    diện quản trị
-                                    trong kiến
-                                    trúc microservice.</li>
-                                <li>Tích hợp xác thực người dùng bằng JWT, triển khai qua Docker & GitLab CI/CD.</li>
-                        </li>
-                        <li>Giao diện phát triển bằng NextJS và React.</li>
-                    </ul>
-                </li>
-
-                <li><strong>Team:</strong> 4 thành viên</li>
-                <li><strong>Kiến trúc:</strong> Microservice</li>
-                <li><strong>Công nghệ:</strong> NodeJS, NextJS, React, MongoDB, Redis, RabbitMQ, Docker,
-                    TailwindCSS, GitLab CI/CD</li>
-                <li><strong>Link GitHub:</strong>
-                    <a href="https://github.com/kennex666/iDevForum-KTPM"
-                        target="_blank">github.com/kennex666/iDevForum-KTPM</a>
-                </li>
-            </ul>
-            <br>
-            <a href="https://github.com/kennex666/iDevForum-KTPM" target="_blank" class="btn-danger">See
-                More</a>
-
-            </li>
-            <li class="item">
-                <div class="image">
-                    <img src="./img/cakeShop.png" alt=""><img src="./img/cakeShop2.png" alt="">
-                </div>
-                <h2 class="name">The Cake Shop</h2>
-                <p class="desc">
-                    Nền tảng thương mại điện tử bán bánh ngọt, cho phép người dùng đăng ký, đăng nhập, đặt hàng và quản lý đơn hàng.
-                    Phát triển Backend với Spring MVC, Spring Security, Hibernate và SQL Server. Triển khai xác thực bảo mật và Jakarta Servlet để xử lý phiên.<br>
-                    Tạo giao diện web đáp ứng bằng HTML, CSS và JSP. Hệ thống được thiết kế theo kiến trúc Monolithic.
-                </p>
-                <ul class="project-detail">
-                    <li><strong>Thời gian:</strong> 08/2024 – 12/2024</li>
-                    <li><strong>Vai trò:</strong> Project Leader & Developer (BE & FE)</li>
-                    <li><strong>Nhiệm vụ:</strong>
-                        <ul class="task-list">
-                            <li>Xây dựng Backend với Spring MVC, Spring Security, Hibernate và SQL Server. Triển khai
-                                xác thực bảo mật và Jakarta Servlet để xử lý phiên.</li>
-                            <li>Tạo giao diện web đáp ứng bằng HTML, CSS và JSP.</li>
-                        </ul>
-                    <li><strong>Team:</strong> 3 thành viên</li>
-                    <li><strong>Kiến trúc:</strong> Monolithic</li>
-                    <li><strong>Công nghệ:</strong>Java, Spring Framework (MVC, Security, JDBC, ORM/Hibernate), JSP,
-                        HTML, CSS, SQL Server, Jakarta Servlet, Hibernate ORM</li>
-                    <li><strong>Link GitHub:</strong>
-                        <a href="https://github.com/phandinhthai012/TheCakeShop-LTWWW"
-                            target="_blank">github.com/phandinhthai012/TheCakeShop-LTWWW</a>
-                    </li>
-                </ul>
-                <br>
-                <a href="https://github.com/phandinhthai012/TheCakeShop-LTWWW" target="_blank" class="btn-danger">See
-                    More</a>
-            </li>
-            <li class="item">
-                <div class="image">
-                    <img src="./img/karaoke01.png" alt="">
-                </div>
-                <h2 class="name">Karaoke Management System</h2>
-                <p class="desc">
-                    Hệ thống quản lý phòng karaoke với chức năng đặt phòng, thanh toán, quản lý khách hàng, phục vụ cho việc quản lí 
-                    và vận hành các phòng karaoke, sử dụng Java Swing, WindowBuilder, SQL Server và JavaMail.
-                </p>
-                <ul class="project-detail">
-                    <li><strong>Thời gian:</strong> 08/2023 – 11/2023</li>
-                    <li><strong>Vai trò:</strong> Developer</li>
-                    <li><strong>Nhiệm vụ:</strong>
-                        <ul class="task-list">
-                            <li>Phát triển giao diện người dùng bằng Java Swing và WindowBuilder.</li>
-                            <li>Xử lý logic đặt phòng, tính giờ, thanh toán, quản lý khách hàng và gửi email thông báo
-                                bằng JavaMail.</li>
-                            <li>Kết nối dữ liệu và xử lý giao dịch với SQL Server.</li>
-                        </ul>
-                    <li><strong>Team:</strong> 3 thành viên</li>
-                    <li><strong>Kiến trúc:</strong> Monolithic</li>
-                    <li><strong>Công nghệ:</strong> Java, Swing, WindowBuilder, SQL Server, JDBC, JavaMail</li>
-                    <li><strong>Link GitHub:</strong>
-                        <a href="https://github.com/phandinhthai012/quan_li_Karaoke"
-                            target="_blank">github.com/phandinhthai012/quan_li_Karaoke</a>
-                    </li>
-                </ul>
-                <br>
-                <a href="https://github.com/phandinhthai012/quan_li_Karaoke" target="_blank" class="btn-danger">See
-                    More</a>
-            </li>
-            </ul>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-wrapper">
-                <!-- Thông tin liên hệ -->
-                <div class="info contact-info">
-                    <div>
-                        <p><strong>Họ tên:</strong> Phan Đình Thái</p>
-                        <p><strong>Email:</strong> <a
-                                href="mailto:phandinhthai012@gmail.com">phandinhthai012@gmail.com</a></p>
-                        <p><strong>Điện thoại:</strong> 0866 952 340</p>
-                        <p><strong>Địa chỉ:</strong> Gò Vấp, TP. Hồ Chí Minh</p>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/phandinhthai012"
-                                target="_blank">github.com/phandinhthai012</a></p>
-                    </div>
-                </div>
-
-                <!-- Form liên hệ -->
-                <!-- Form liên hệ -->
-                <form class="form-contact" onsubmit="alert('This feature is not available yet.'); return false;">
-                    <input type="text" name="name" placeholder="Họ và tên" required>
-                    <input type="email" name="email" placeholder="Email của bạn" required>
-                    <textarea name="message" rows="6" placeholder="Nội dung cần trao đổi..." required></textarea>
-                    <button type="submit" class="btn-danger">Gửi</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-    <!-- font lib  -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <!-- Js custom file -->
-    <script src="./script-jquery.js"></script>
+    <footer>
+        <p>&copy; 2025 Phan Đình Thái. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
