@@ -2,374 +2,718 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phan Dinh Thai - Portfolio</title>
-    <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css"> -->
-    <!-- <script src="./assets/js/jquery-3.6.4.min.js"></script> -->
-    <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./responsive.css">
-    <link rel="icon" href="./img/logoNew.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <link href="/dist/output.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Work+Sans:wght@100;200;300;400&display=swap"
+    rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Urbanist:wght@100;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
 </head>
 
-<body id="home">
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="">
-                        <img src="./img/logoNew.png" alt="">
-                    </a>
+<body>
+  <style>
+    .pattern {
+      background-image: linear-gradient(135deg, #000428 0%, #004e92 100%);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      opacity: 5;
+      position: relative;
+    }
+
+
+    .custom-font-1 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    .custom-font-2 {
+      font-family: "Urbanist", sans-serif;
+    }
+
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background-color: #000;
+      color: #fff;
+      font-size: 0;
+      /* Hide any text inside the button */
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      opacity: 1;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+
+  </script>
+
+
+  <!-- Header -->
+
+  <header class="pattern">
+    <div class="px-6 mx-auto">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex-1 md:flex md:items-center md:gap-12">
+            <a class="block" href="#home">
+              <span class="sr-only">Home</span>
+              <img class="w-auto h-6 sm:h-12 rounded-full" src="./assets/images/logoNew.png" alt="logo" />
+            </a>
+          </div>
+
+          <div class="flex lg:hidden px-6">
+            <button id="menu-toggle" type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-1.5 text-gray-300">
+              <span class="sr-only">Open main menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="hidden lg:flex lg:gap-x-12">
+            <ul class="flex items-center gap-6 text-sm">
+              <li>
+                <a class="px-1 py-1 text-sm font-light text-white transition-colors duration-300 transform hover:underline underline-offset-8 tracking-widest custom-font-2"
+                  href="#about">
+                  About
+                </a>
+              </li>
+              <li>
+                <a class="py-1 text-sm font-light text-white transition-colors duration-300 transform hover:underline underline-offset-8 tracking-widest custom-font-2"
+                  href="#projects">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a class="py-1 text-sm font-light text-white transition-colors duration-300 transform hover:underline underline-offset-8 tracking-widest custom-font-2"
+                  href="#contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mobile menu, show/hide based on menu open state -->
+          <div class="hidden" role="dialog" aria-modal="true" id="menu">
+            <div class="fixed inset-0 z-10">
+              <div
+                class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex lg:hidden px-8 items-center justify-between">
+                  <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Home</span>
+                  </a>
+                  <button type="button" id="close-menu"
+                    class="inline-flex items-center justify-center rounded-md p-1.5 text-gray-700">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                      aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
                 </div>
-                <ul class="menu">
-                    <li class="item">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="item">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="item">
-                        <a href="#skills">Skills</a>
-                    </li>
-                    <li class="item">
-                        <a href="#projects">Projects</a>
-                    </li>
-                    <li class="item">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
 
-
-                <!--  tạo menu cho màn hình nhỏ  -->
-
-                <div class="open-menu">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-
-                <ul class="responsive-menu">
-                    <div class="close-responsive-menu">
-                        <ion-icon name="close-outline"></ion-icon>
+                <div class="mt-6 flow-root">
+                  <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                      <a href="#about"
+                        class="-mx-3 text-sm font-semibold leading-6 text-center text-gray-900 block px-4 py-2 hover:bg-gray-100">
+                        About
+                      </a>
+                      <a href="#projects"
+                        class="-mx-3 text-sm font-semibold leading-6 text-center text-gray-900 block px-4 py-2 hover:bg-gray-100">
+                        Projects
+                      </a>
+                      <a href="#"
+                        class="-mx-3 text-sm font-semibold leading-6 text-center text-gray-900 block px-4 py-2 hover:bg-gray-100">
+                        Contact
+                      </a>
                     </div>
-                    <li class="item">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="item">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="item">
-                        <a href="#skills">Skills</a>
-                    </li>
-                    <li class="item">
-                        <a href="#projects">Projects</a>
-                    </li>
-                    <li class="item">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-
-
-
-            <div class="intro">
-                <div class="avatar">
-                    <!-- <img src="./img/avatar.png" alt=""> -->
-                    <img src="./img/me.jpg" alt="Phan Dinh Thai's Avatar" style="border-radius: 50%;">
+                  </div>
                 </div>
-                <h1 class="name">Phan Dinh Thai</h1>
-                <p class="desc">
-                    Software Development Intern
-                </p>
-                <button class="btn-danger"
-                    onclick="alert('please contact me via email or phone in the About section to discuss internship opportunities.')">
-                    hire me
-                </button>
+              </div>
             </div>
+          </div>
+          <!-- End of Mobile menu, show/hide based on menu open state -->
         </div>
-    </header>
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">
-                About Me
-            </h2>
-            <p class="desc">
-                I am a final-year Software Engineering student at Industrial University of Ho Chi Minh City. Passionate
-                about coding and problem-solving, I am actively seeking an internship opportunity as a Software
-                Developer.
+      </div>
+
+      <div class="flex flex-col items-center py-6">
+        <div class="mx-auto max-w-screen-xl px-4 justify-center text-center flex h-screen items-center">
+          <div class="mx-auto max-w-4xl text-center -mt-60">
+            <h1 class="text-gray-200 bg-clip-text font-normal lg:text-7xl text-3xl tracking-wider custom-font-1">
+              THAI PHAN
+            </h1>
+
+            <p class="text-gray-300 mx-auto mt-4 max-w-4xl sm:text-xl/relaxed tracking-wider font-light">
+              I am a passionate Software Engineer and final-year Software Engineering student with a solid foundation in
+              software development.<br>
+              Skilled in Back-end and Front-end technologies such as Java, Node.js, ReactJS, Spring Boot, and MongoDB, I
+              aim to become a Full-stack Developer
             </p>
-            <div class="info">
-                <div class="box-left">
-                    <img src="./img/me.jpg" alt="About Me Image" style="border-radius: 10px;">
-                    <img src="./img" alt="About Me Image"
-                        style="border-radius: 10px;max-width: 350px; height: auto;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); object-fit: cover; border: 2px solid #ddd; transition: transform 0.3s;">
-                </div>
-                <div class="box-right">
-                    <h3>Hello</h3>
-                    <h2>My name is <span>Phan Đình Thái</span></h2>
-                    <ul class="personal-info">
-                        <li><strong>Date of birth: </strong> 02/01/2003</li>
-                        <li><strong>Age: </strong> 22</li>
-                        <li><strong>Email: </strong> <a
-                                href="mailto:phandinhthai012@gmail.com">phandinhthai012@gmail.com</a></li>
-                        <li><strong>Phone: </strong> 0866 952 340</li>
-                        <li><strong>Address: </strong> Gò Vấp, TP. Hồ Chí Minh, Việt Nam</li>
-                    </ul>
-                    <p>I am a final-year Software Engineering student at Industrial University of Ho Chi Minh City.
-                        Passionate about coding and problem-solving, I am actively seeking an internship opportunity as
-                        a Software Developer. My goal is to become a skilled programmer, working efficiently in a
-                        professional environment and contributing to impactful projects.</p>
-
-                    <!-- <p>
-                        Tôi là sinh viên năm cuối ngành Kỹ thuật phần mềm tại Đại học Công nghiệp TP.HCM. Tôi yêu thích
-                        lập trình, đam mê khám phá công nghệ mới và luôn sẵn sàng học hỏi để phát triển bản thân. Mục
-                        tiêu của tôi là trở thành một lập trình viên có chuyên môn vững vàng, làm việc hiệu quả trong
-                        môi trường chuyên nghiệp và đóng góp vào những dự án thực tế mang lại giá trị.<br><br>
-                        Mong muốn được đóng góp vào sự phát triển của công ty, đồng thời không ngừng học hỏi và nâng cao
-                        kiến thức, kỹ năng mỗi ngày.
-                    </p> -->
-                    <button class="btn-danger" onclick="window.location.href='#contact'">Contact Me</button>
-                </div>
+            <div class="flex justify-center gap-4">
+              <a type="button"
+                class="mt-6 inline-flex items-center gap-2 rounded-lg bg-gray-800 px-6 py-3 text-sm text-white shadow hover:bg-gray-700">
+                <i data-lucide="mail" class="inline-block align-middle"></i>
+                <span class="hidden sm:inline-block align-middle">Contact Me</span>
+              </a>
+              <a href="https://github.com/phandinhthai012" target="_blank" rel="noopener noreferrer"
+                class="mt-6 inline-flex items-center gap-2 rounded-lg bg-gray-800 px-6 py-3 text-sm text-white shadow hover:bg-gray-700 transition-colors duration-200">
+                <i data-lucide="github" class="inline-block align-middle"></i>
+                <span class="hidden sm:inline-block align-middle">GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/thai-phan-dinh-508657370/" target="_blank" rel="noopener noreferrer"
+                class="mt-6 inline-flex items-center gap-2 rounded-lg bg-gray-800 px-6 py-3 text-sm text-white shadow hover:bg-gray-700">
+                <i data-lucide="linkedin" class="inline-block align-middle"></i>
+                <span class="hidden sm:inline-block align-middle">LinkedIn</span>
+              </a>
             </div>
+
+          </div>
         </div>
-    </section>
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">
-                My Skills
+      </div>
+    </div>
+  </header>
+
+  <!-- End of Header -->
+
+  <!-- About Section -->
+
+  <section id="about">
+    <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
+        <div class="relative z-10 lg:py-16">
+          <div
+            class="relative h-64 sm:h-80 lg:h-full flex justify-center items-center bg-gray-200 rounded-xl shadow-lg mx-6">
+            <img alt="my picture" src="./assets/images/my-avatar.png"
+              class=" inset-0 h-56 w-56 object-cover rounded-full shadow-lg" />
+          </div>
+        </div>
+
+        <div class="relative flex items-center bg-gray-100">
+          <span class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span>
+
+          <div class="p-8 sm:p-16 lg:p-24">
+            <h2 class="text-2xl font-bold sm:text-3xl mb-4">
+              About me
             </h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Ngôn ngữ & Framework</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Java (Spring Boot)</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>React.js</li>
-                        <li>Express.js</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Cơ sở dữ liệu</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>SQL Server</li>
-                        <li>MongoDB</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>DevOps & Cloud</h3>
-                    <ul>
-                        <li>AWS (EC2, S3, RDS, IAM)</li>
-                        <li>Docker</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Công cụ khác</h3>
-                    <ul>
-                        <li>Zegocloud (Video SDK)</li>
-                        <li>Firebase Auth</li>
-                        <li>Postman</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">
-                Projects
-            </h2>
-            <ul class="projects">
-                <li class="item">
-                    <div class="image">
-                        <img src="./img/chatapp.png" alt="">
-                    </div>
-                    <h2 class="name">ForTH Chat</h2>
-                    <p class="desc">
-                        Ứng dụng nhắn tin đa nền tảng (web, di động) hỗ trợ thời gian thực tương tự Zalo, sử dụng
-                        Node.js, MongoDB, Socket.IO, ReactJS và React Native.
-                    </p>
-                    <!-- <p class="desc">
-                        Thiết kế cấu trúc thư mục cho Backend (Node.js, Express, MongoDB) và Frontend (ReactJS, React Native).<br><br>
-                        Phát triển API RESTful (Express) tích hợp Socket.IO và xây dựng MongoDB để tăng hiệu suất và bảo mật.<br><br>
-                        Xây dựng giao diện web (ReactJS) và di động (React Native), tối ưu hóa trải nghiệm người dùng.<br><br>
-                    </p> -->
-                    <ul class="project-detail">
-                        <li><strong>Thời gian:</strong> 01/2025 – 05/2025</li>
-                        <li><strong>Vai trò:</strong> Project Leader & Developer (BE & FE)</li>
-                        <li><strong>Nhiệm vụ:</strong>
-                            <ul class="task-list">
-                                <li>Thiết kế cấu trúc thư mục Backend (Node.js, Express, MongoDB) và Frontend (ReactJS,
-                                    React Native).</li>
-                                <li>Phát triển API RESTful tích hợp Socket.IO và tối ưu MongoDB cho hiệu suất, bảo mật.
-                                </li>
-                                <li>Xây dựng giao diện web (ReactJS) và di động (React Native), tối ưu trải nghiệm người
-                                    dùng.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Team:</strong> 5 thành viên</li>
-                        <li><strong>Kiến trúc:</strong> Client – Server</li>
-                        <li><strong>Công nghệ:</strong> Node.js, MongoDB, Socket.IO, React.js, React Native, Git, AWS
-                            S3, Zegocloud, Render</li>
+            <div class="mb-8">
+              <h3 class="text-base sm:text-xl font-semibold text-gray-800 mb-4">Personal Information</h3>
+              <ul class="space-y-2 text-gray-600 text-sm sm:text-base">
+                <li>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="calendar" class="inline-block align-middle"></i>
+                    <span>
+                      <strong>Date of Birth:</strong> 02/01/2003
+                    </span>
+                  </div>
 
-                    </ul>
-                    <br>
-                    <p><strong style="color: red; font-weight: bold; font-size: large;">
-                            GitHub:</strong> <a href="https://github.com/phandinhthai012/ZaloChatApp"
-                            target="_blank">View on GitHub</a></p>
-                    <!-- <a href="https://github.com/phandinhthai012/ZaloChatApp" target="_blank" class="btn-danger">See
-                        More</a> -->
                 </li>
-                <li class="item">
-                    <div class="image">
-                        <img src="./img/idev.png" alt="">
-                    </div>
-                    <h2 class="name">iDev4rum – IUH Developers Forum</h2>
-                    <p class="desc"> Diễn đàn công nghệ dành cho sinh viên để chia sẻ thông tin, sử dụng Node.js,
-                        Next.js, React, MongoDB và áp dụng kiến trúc microservices.
-                        <!-- Phát triển các dịch vụ backend (User Service, API Gateway, Auth) và xây dựng giao diện quản trị
-                        trong kiến
-                        trúc microservice.<br><br>
-                        Tích hợp xác thực người dùng bằng JWT, triển khai qua Docker & GitLab CI/CD.<br><br>
-                        Giao diện phát triển bằng NextJS và React.<br><br> -->
-
-                    </p>
-                    <ul class="project-detail">
-                        <li><strong>Thời gian:</strong> 12/2024 – 05/2025</li>
-                        <li><strong>Vai trò:</strong> Developer (User Service & Admin Interface)</li>
-                        <li><strong>Nhiệm vụ:</strong>
-                            <ul class="task-list">
-                                <li>Phát triển các dịch vụ backend (User Service, API Gateway, Auth) và xây dựng giao
-                                    diện quản trị
-                                    trong kiến
-                                    trúc microservice.</li>
-                                <li>Tích hợp xác thực người dùng bằng JWT, triển khai qua Docker & GitLab CI/CD.</li>
-                        </li>
-                        <li>Giao diện phát triển bằng NextJS và React.</li>
-                    </ul>
+                <li>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="user" class="inline-block align-middle"></i>
+                    <span>
+                      <strong>Sex:</strong> Male
+                    </span>
+                  </div>
                 </li>
-
-                <li><strong>Team:</strong> 4 thành viên</li>
-                <li><strong>Kiến trúc:</strong> Microservice</li>
-                <li><strong>Công nghệ:</strong> NodeJS, NextJS, React, MongoDB, Redis, RabbitMQ, Docker,
-                    TailwindCSS, GitLab CI/CD</li>
-            </ul>
-            <br>
-            <p><strong style="color: red; font-weight: bold; font-size: large;">
-                    GitHub:</strong> <a href="https://github.com/kennex666/iDevForum-KTPM" target="_blank">View on
-                    GitHub</a></p>
-            <!-- <a href="https://github.com/kennex666/iDevForum-KTPM" target="_blank" class="btn-danger">See
-                More</a> -->
-
-            </li>
-            <li class="item">
-                <div class="image">
-                    <img src="./img/cakeShop.png" alt=""><img src="./img/cakeShop2.png" alt="">
-                </div>
-                <h2 class="name">The Cake Shop</h2>
-                <p class="desc">
-                    Nền tảng thương mại điện tử bán bánh ngọt, cho phép người dùng đăng ký, đăng nhập, đặt hàng và quản
-                    lý đơn hàng.
-                    Phát triển Backend với Spring MVC, Spring Security, Hibernate và SQL Server. Triển khai xác thực bảo
-                    mật và Jakarta Servlet để xử lý phiên.<br>
-                    Tạo giao diện web đáp ứng bằng HTML, CSS và JSP. Hệ thống được thiết kế theo kiến trúc Monolithic.
-                </p>
-                <ul class="project-detail">
-                    <li><strong>Thời gian:</strong> 08/2024 – 12/2024</li>
-                    <li><strong>Vai trò:</strong> Project Leader & Developer (BE & FE)</li>
-                    <li><strong>Nhiệm vụ:</strong>
-                        <ul class="task-list">
-                            <li>Xây dựng Backend với Spring MVC, Spring Security, Hibernate và SQL Server. Triển khai
-                                xác thực bảo mật và Jakarta Servlet để xử lý phiên.</li>
-                            <li>Tạo giao diện web đáp ứng bằng HTML, CSS và JSP.</li>
-                        </ul>
-                    <li><strong>Team:</strong> 3 thành viên</li>
-                    <li><strong>Kiến trúc:</strong> Monolithic</li>
-                    <li><strong>Công nghệ:</strong>Java, Spring Framework (MVC, Security, JDBC, ORM/Hibernate), JSP,
-                        HTML, CSS, SQL Server, Jakarta Servlet, Hibernate ORM</li>
-                    
-                </ul>
-                <br>
-                <p><strong style="color: red; font-weight: bold; font-size: large;">
-                        GitHub:</strong> <a href="https://github.com/phandinhthai012/TheCakeShop-LTWWW"
-                            target="_blank">View on GitHub</a></p>
-                <!-- <a href="https://github.com/phandinhthai012/TheCakeShop-LTWWW" target="_blank" class="btn-danger">See
-                    More</a> -->
-            </li>
-            <li class="item">
-                <div class="image">
-                    <img src="./img/karaoke01.png" alt="">
-                </div>
-                <h2 class="name">Karaoke Management System</h2>
-                <p class="desc">
-                    Hệ thống quản lý phòng karaoke với chức năng đặt phòng, thanh toán, quản lý khách hàng, phục vụ cho
-                    việc quản lí
-                    và vận hành các phòng karaoke, sử dụng Java Swing, WindowBuilder, SQL Server và JavaMail.
-                </p>
-                <ul class="project-detail">
-                    <li><strong>Thời gian:</strong> 08/2023 – 11/2023</li>
-                    <li><strong>Vai trò:</strong> Developer</li>
-                    <li><strong>Nhiệm vụ:</strong>
-                        <ul class="task-list">
-                            <li>Phát triển giao diện người dùng bằng Java Swing và WindowBuilder.</li>
-                            <li>Xử lý logic đặt phòng, tính giờ, thanh toán, quản lý khách hàng và gửi email thông báo
-                                bằng JavaMail.</li>
-                            <li>Kết nối dữ liệu và xử lý giao dịch với SQL Server.</li>
-                        </ul>
-                    <li><strong>Team:</strong> 3 thành viên</li>
-                    <li><strong>Kiến trúc:</strong> Monolithic</li>
-                    <li><strong>Công nghệ:</strong> Java, Swing, WindowBuilder, SQL Server, JDBC, JavaMail</li>
-                    
-                </ul>
-                <br>
-                <p><strong style="color: red; font-weight: bold; font-size: large;">
-                        GitHub:</strong> <a href="https://github.com/phandinhthai012/quan_li_Karaoke"
-                            target="_blank">View on GitHub</a></p>
-                <!-- <a href="https://github.com/phandinhthai012/quan_li_Karaoke" target="_blank" class="btn-danger">See
-                    More</a> -->
-            </li>
-            </ul>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-wrapper">
-                <!-- Thông tin liên hệ -->
-                <div class="info contact-info">
-                    <div>
-                        <p><strong>Họ tên:</strong> Phan Đình Thái</p>
-                        <p><strong>Email:</strong> <a
-                                href="mailto:phandinhthai012@gmail.com">phandinhthai012@gmail.com</a></p>
-                        <p><strong>Điện thoại:</strong> 0866 952 340</p>
-                        <p><strong>Địa chỉ:</strong> Gò Vấp, TP. Hồ Chí Minh</p>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/phandinhthai012"
-                                target="_blank">github.com/phandinhthai012</a></p>
-                    </div>
-                </div>
-
-                <!-- Form liên hệ -->
-                <!-- Form liên hệ -->
-                <form class="form-contact" onsubmit="alert('This feature is not available yet.'); return false;">
-                    <input type="text" name="name" placeholder="Họ và tên" required>
-                    <input type="email" name="email" placeholder="Email của bạn" required>
-                    <textarea name="message" rows="6" placeholder="Nội dung cần trao đổi..." required></textarea>
-                    <button type="submit" class="btn-danger">Gửi</button>
-                </form>
+                <li>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="phone" class="inline-block align-middle"></i>
+                    <span>
+                      <strong>Phone:</strong> 0866952340
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="mail" class="inline-block align-middle"></i>
+                    <span>
+                      <strong>Email:</strong> phandinhthai012@gmail.com
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="map-pin" class="inline-block align-middle"></i>
+                    <span>
+                      <strong>Address:</strong> Go Vap District, Ho Chi Minh City
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
+            <!-- Education -->
+            <div>
+              <h3 class="text-base sm:text-xl font-semibold text-gray-800 mb-4">Education</h3>
+              <p class="text-gray-600 text-sm sm:text-base">
+                Industrial University of Ho Chi Minh City <br />
+                Faculty of Information Technology <br />
+                <em>The Degree of Engineer in Software Engineering</em> <br />
+              </p>
+            </div>
+
+          </div>
         </div>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- End of About Section -->
+
+  <!-- Skillset Section -->
+
+  <section class="bg-gray-100">
+    <div class="container grid grid-cols-1 gap-10 px-6 py-12 mx-auto lg:grid-cols-3">
+      <div>
+        <h1 class="mt-2 text-xl font-semibold text-gray-800 md:text-3xl ">My technical skillset</h1>
+        <p class="mt-3 text-gray-500 ">These are the main skills and technologies I have experience with, I utilize this
+          skill set to develop effective software solutions, optimize performance, and provide outstanding user
+          experiences.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-12 lg:col-span-2 sm:grid-cols-2">
+        <div>
+          <h2 class="font-semibold text-lg text-gray-800 ">Programming Languages</h2>
+          <p class="mt-1 text-gray-500 ">Java, JavaScript (ES6+), TypeScript</p>
+        </div>
+        <div>
+          <h2 class="font-semibold text-lg text-gray-800 ">Front-end</h2>
+          <p class="mt-1 text-gray-500 ">ReactJS, HTML5, CSS3, Bootstrap, Tailwind CSS</p>
+        </div>
+        <div>
+          <h2 class="font-semibold text-lg text-gray-800 ">Back-end & Frameworks</h2>
+          <p class="mt-1 text-gray-500 ">Spring Boot, Node.js, Express.js, RESTful API, JWT, Socket.IO, Hibernate,
+            Jakarta Servlet</p>
+        </div>
+        <div>
+          <h2 class="font-semibold text-lg text-gray-800 ">Database & Tools</h2>
+          <p class="mt-1 text-gray-500 ">MongoDB, MySQL, SQL Server, Git/GitHub, Postman</p>
+
+        </div>
+
+        <div>
+          <h2 class="font-semibold text-lg text-gray-800 ">Cloud & DevOps (Basic)</h2>
+          <p class="mt-1 text-gray-500 "> AWS (EC2, S3, RDS, IAM), Docker, GitLab CI/CD</p>
+        </div>
+        <div>
+          <h2 class="font-semibold text-lg text-gray-800 ">Soft Skills</h2>
+          <p class="mt-1 text-gray-500 ">Problem Solving, Teamwork, English (reading technical docs), Learning Ability
+            quickly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End of Skillset Section -->
+
+  <!-- Projects Section -->
+
+  <section id="projects">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+      <!-- <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8"> -->
+      <header class="text-center">
+        <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
+          My projects
+        </h2>
+
+        <p class="max-w-lg mx-auto mt-4 text-gray-500">
+          These projects represent my journey as a Software Engineer, where I turned
+          ideas into practical applications. Each one helped me grow my skills and
+          explore new technologies along the way.
+        </p>
+      </header>
+
+      <ul class="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <li>
+          <div class="relative block group">
+            <img src="./assets/images/chatapp.png" alt="ForTH Chat project"
+              class="object-fit-cover w-full transition duration-500 aspect-square group-hover:opacity-90" />
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+              <h3 class="text-lg font-bold text-white">ForTH Chat</h3>
+              <p class="mt-2 text-sm text-gray-200">
+                A Zalo-like chat application for web and mobile that enables users to chat, create groups, make calls,
+                and share media (files, stickers, GIFs). Developed with a scalable Client–Server architecture using
+                Node.js, MongoDB, Socket.IO, ReactJS, and React Native
+              </p>
+              <p class="mt-1 text-xs text-gray-300">
+              Technologies: Node.js, MongoDB, Socket.IO, React.js, React Native, Git, AWS S3, Zegocloud, Render
+              </p>
+              <div class="mt-4 flex gap-2">
+                <a href="https://github.com/phandinhthai012/ZaloChatApp" target="_blank"
+                class="text-sm font-semibold text-white hover:underline">View on GitHub</a>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+              ForTH Chat – A Real-time, Cross-Platform Messaging Application
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="relative block group">
+            <img src="./assets/images/karaoke01.png" alt="Karaoke Management System"
+              class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90" />
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+              <h3 class="text-lg font-bold text-white">Karaoke Management System</h3>
+              <p class="mt-2 text-sm text-gray-200">
+                A karaoke room management system with features for room booking, payment processing, and customer management. Built with Java Swing, WindowBuilder, SQL Server, and Java mail.
+              </p>
+              <p class="mt-1 text-xs text-gray-300">
+                Technologies:  Java, Swing, WindowBuilder, SQL Server, JDBC, JavaMail
+              </p>
+              <div class="mt-4 flex gap-2">
+                <a href="https://github.com/phandinhthai012/quan_li_Karaoke" target="_blank"
+                class="text-sm font-semibold text-white hover:underline">View on GitHub</a>
+              </div>
+              
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+                Karaoke Management System – A Comprehensive Solution for Managing Karaoke Rooms
+              </p>
+          </div>
+        </li>
+
+        <li>
+          <div class="relative block group">
+            <img src="assets/images/cakeShop.png" alt="Cake Shop E-Commerce"
+              class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90" />
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+              <h3 class="text-lg font-bold text-white">Cake Shop E-Commerce</h3>
+              <p class="mt-2 text-sm text-gray-200">
+                A cake shop e-commerce web application, allows customers to register, log in, place and manage orders, while also providing an admin interface for managing products and orders. Built with Spring MVC, Spring Security, Hibernate, SQL Server (Backend) and JSP, HTML/CSS, JavaScript (Frontend)
+              </p>
+              <p class="mt-1 text-xs text-gray-300">
+                Technologies: Java, Spring Framework (MVC, Security, JDBC, ORM/Hibernate), JSP, HTML, CSS, SQL Server, Jakarta Servlet, Hibernate ORM
+              </p>
+              <div class="mt-4 flex gap-2">
+                <a href="https://github.com/phandinhthai012/TheCakeShop-LTWWW" target="_blank"
+                class="text-sm font-semibold text-white hover:underline">View on GitHub</a>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+                Cake Shop E-Commerce – A Comprehensive Online Platform for Cake Shopping
+              </p>
+          </div>
+        </li>
+
+        <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <div class="relative block group">
+            <img src="assets/images/idev.png" alt="iDev4rum – IUH Developers Forum"
+              class="object-fit-fill w-full transition duration-500 aspect-square group-hover:opacity-90" />
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+              <h3 class="text-lg font-bold text-white">iDev4rum – IUH Developers Forum</h3>
+              <p class="mt-2 text-sm text-gray-200">
+                Technology forum for students to share information, use Node.js, Next.js, React, MongoDB and apply microservices architecture.
+              </p>
+              <p class="mt-1 text-xs text-gray-300">
+                Technologies: NodeJS, NextJS, React, MongoDB, Redis, RabbitMQ, Docker, TailwindCSS, GitLab CI/CD
+              </p>
+              <div class="mt-4 flex gap-2">
+                <a href="https://github.com/phandinhthai012/iDevForum-KTPM" class="text-sm font-semibold text-white hover:underline">View Source</a>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+                iDev4rum – IUH Developers Forum – A Technology Forum for Students
+              </p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- End of Projects Section -->
+
+  <!-- Work Experience Section -->
+
+  <section class="bg-gray-100">
+    <div class="container px-4 py-16 mx-auto space-y-8 lg:max-w-3xl">
+      <h2 class="text-2xl text-center font-bold md:text-4xl">My work experience</h2>
+      <div class="space-y-8">
+        <div>
+          <h3 class="mb-3 text-lg font-bold md:text-xl">2021 - Present</h3>
+          <ul class="space-y-4">
+            <li class="space-y-1">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                  <path d="M12 6c-2.21 0-4 1.79-4 4h2a2 2 0 1 1 4 0h2c0-2.21-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                </svg>
+                <h4 class="font-medium">Student at Industrial University of Ho Chi Minh City</h4>
+              </div>
+              <p class="ml-7">Major: Software Engineering<br>Activities: Studying, participating in projects, and developing technical and soft skills.</p>
+            </li>
+          </ul>
+        </div>
+        <!-- <div>
+          <h3 class="mb-3 text-lg font-bold md:text-xl">2020</h3>
+          <ul class="space-y-4">
+            <li class="space-y-1">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current ">
+                  <path
+                    d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z">
+                  </path>
+                  <polygon
+                    points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808">
+                  </polygon>
+                </svg>
+                <h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+              </div>
+              <p class="ml-7 ">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur
+                mum.</p>
+            </li>
+            <li class="space-y-1">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current ">
+                  <path
+                    d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z">
+                  </path>
+                  <polygon
+                    points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808">
+                  </polygon>
+                </svg>
+                <h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+              </div>
+              <p class="ml-7 ">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur
+                mum.</p>
+            </li>
+            <li class="space-y-1">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current ">
+                  <path
+                    d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z">
+                  </path>
+                  <polygon
+                    points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808">
+                  </polygon>
+                </svg>
+                <h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+              </div>
+              <p class="ml-7 ">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur
+                mum.</p>
+            </li>
+          </ul>
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- End of Work Experience Section -->
+
+  <!-- Footer -->
+
+  <footer class="bg-white lg:grid lg:grid-cols-2" id="contact">
+    <div class="px-4 py-16 sm:px-6 lg:col-span-2 lg:px-8">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div>
+          <p>
+            <span class="text-xs uppercase tracking-wider text-gray-500">
+              Contact me
+            </span>
+
+            <a href="mailto:phandinhthai012@gmail.com"
+              class="block text-xl font-medium text-gray-900 hover:opacity-75 sm:text-2xl hover:underline underline-offset-4">
+              phandinhthai012@gmail.com
+            </a>
+          </p>
+        </div>
 
 
-    <!-- font lib  -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <!-- Js custom file -->
-    <script src="./script-jquery.js"></script>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <p>
+              <span class="text-xs uppercase tracking-wider text-gray-500">
+                Let's connect
+              </span>
+            </p>
+
+            <ul class="mt-1 flex gap-6">
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75"
+                  data-te-toggle="tooltip" data-te-placement="top" title="Facebook">
+                  <span class="sr-only">Facebook</span>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75"
+                  data-te-toggle="tooltip" title="Instagram">
+                  <span class="sr-only">Instagram</span>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2">
+                    <rect height="20" rx="5" ry="5" width="20" x="2" y="2" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/in/thai-phan-dinh-508657370/" rel="noreferrer" target="_blank"
+                  class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip" title="LinkedIn">
+                  <span class="sr-only">LinkedIn</span>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect height="12" width="4" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://github.com/phandinhthai012" rel="noreferrer" target="_blank"
+                  class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip" title="GitHub">
+                  <span class="sr-only">GitHub</span>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="./assets/CV_PhanDinhThai_Internship.pdf" rel="noreferrer" target="_blank"
+                  class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip" title="Resume">
+                  <span class="sr-only">Resume</span>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" x2="8" y1="13" y2="13" />
+                    <line x1="16" x2="8" y1="17" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="mt-12 border-t border-gray-100 pt-12">
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <p class="mt-8 text-xs text-gray-500 sm:mt-0 tracking-wider">
+              &copy; 2023. YOUR NAME
+            </p>
+          </div>
+        </div>
+      </div>
+  </footer>
+  <!-- End of Footer -->
+
+  <button onclick="backToTop()" id="backToTopBtn"
+    class="fixed bottom-10 right-10 p-2 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+    title="Back to Top">
+    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <!-- Back to Top Button -->
+  <script>
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    const backToTop = () => {
+      document.body.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      document.documentElement.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    const scrollFunction = () => {
+      if (window.scrollY > 20) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", scrollFunction);
+    backToTopBtn.addEventListener("click", backToTop);
+
+    // Lucide icons init
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+
+  <!-- Burger Menu Button -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    menuToggle.addEventListener("click", () => {
+      document.getElementById("menu").classList.toggle("hidden");
+    });
+
+    const closeMenu = document.getElementById("close-menu");
+    closeMenu.addEventListener("click", () => {
+      document.getElementById("menu").classList.toggle("hidden");
+    });
+  </script>
 </body>
 
 </html>
