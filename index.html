@@ -191,10 +191,8 @@
             </h1>
 
             <p class="text-gray-300 mx-auto mt-6 sm:mt-8 max-w-4xl text-base sm:text-lg md:text-xl lg:text-xl/relaxed tracking-wider font-light px-4">
-              I am a passionate Software Engineer and final-year Software Engineering student with a solid foundation in
-              software development.<br class="hidden sm:block">
-              <span class="block sm:inline">Skilled in Back-end and Front-end technologies such as Java, Node.js, ReactJS, Spring Boot, and MongoDB, I
-              aim to become a Full-stack Developer</span>
+              I am a passionate Software Engineer preparing to graduate and enter the professional world.<br class="hidden sm:block">
+              <span class="block sm:inline">With hands-on experience building real projects using Java, Node.js, ReactJS, Spring Boot, MongoDB, and SQL Server, I'm on a journey to become a skilled and well-rounded Software Engineer who can tackle any challenge</span>
             </p>
             <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-10 px-4">
               <a href="#contact"
@@ -370,11 +368,12 @@
 
       <ul class="grid grid-cols-1 gap-6 sm:gap-8 mt-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
         <li class="sm:col-span-1">
-          <div class="relative block group overflow-hidden rounded-lg">
+          <div class="relative block group overflow-hidden rounded-lg bg-white shadow-md">
             <img src="./assets/images/chatapp.png" alt="ForTH Chat project"
-              class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90 group-hover:scale-105" />
+              class="object-cover w-full transition duration-500 aspect-square md:group-hover:opacity-90 md:group-hover:scale-105" />
+            <!-- Desktop Overlay (hidden on mobile) -->
             <div
-              class="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
+              class="hidden md:flex absolute inset-0 flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
               <h3 class="text-base sm:text-lg font-bold text-white mb-2">ForTH Chat</h3>
               <p class="mt-2 text-xs sm:text-sm text-gray-200 leading-relaxed">
                 A Zalo-like chat application for web and mobile that enables users to chat, create groups, make calls,
@@ -389,17 +388,38 @@
                 class="text-xs sm:text-sm font-semibold text-white hover:underline">View on GitHub</a>
               </div>
             </div>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            <!-- Mobile Info Card (visible on mobile, hidden on desktop) -->
+            <div class="md:hidden p-4 bg-white">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">ForTH Chat</h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                A Zalo-like chat application for web and mobile that enables users to chat, create groups, make calls,
+                and share media (files, stickers, GIFs). Developed with a scalable Client–Server architecture using
+                Node.js, MongoDB, Socket.IO, ReactJS, and React Native
+              </p>
+              <p class="text-xs text-gray-500 leading-relaxed mb-3">
+              Technologies: Node.js, MongoDB, Socket.IO, React.js, React Native, Git, AWS S3, Zegocloud, Render
+              </p>
+              <div class="mt-4">
+                <a href="https://github.com/phandinhthai012/ZaloChatApp" target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-gray-700 hover:underline">
+                  View on GitHub
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Title for desktop -->
+            <p class="hidden md:block mt-3 text-sm text-gray-500 leading-relaxed px-2">
               ForTH Chat – A Real-time, Cross-Platform Messaging Application
             </p>
           </div>
         </li>
         <li class="sm:col-span-1">
-          <div class="relative block group overflow-hidden rounded-lg">
+          <div class="relative block group overflow-hidden rounded-lg bg-white shadow-md">
             <img src="./assets/images/karaoke01.png" alt="Karaoke Management System"
-              class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90 group-hover:scale-105" />
+              class="object-cover w-full transition duration-500 aspect-square md:group-hover:opacity-90 md:group-hover:scale-105" />
+            <!-- Desktop Overlay (hidden on mobile) -->
             <div
-              class="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
+              class="hidden md:flex absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
               <h3 class="text-base sm:text-lg font-bold text-white mb-2">Karaoke Management System</h3>
               <p class="mt-2 text-xs sm:text-sm text-gray-200 leading-relaxed">
                 A karaoke room management system with features for room booking, payment processing, and customer management. Built with Java Swing, WindowBuilder, SQL Server, and Java mail.
@@ -413,18 +433,37 @@
               </div>
               
             </div>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            <!-- Mobile Info Card (visible on mobile, hidden on desktop) -->
+            <div class="md:hidden p-4 bg-white">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Karaoke Management System</h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                A karaoke room management system with features for room booking, payment processing, and customer management. Built with Java Swing, WindowBuilder, SQL Server, and Java mail.
+              </p>
+              <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                Technologies:  Java, Swing, WindowBuilder, SQL Server, JDBC, JavaMail
+              </p>
+              <div class="mt-4">
+                <a href="https://github.com/phandinhthai012/quan_li_Karaoke" target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-gray-700 hover:underline">
+                  View on GitHub
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Title for desktop -->
+            <p class="hidden md:block mt-3 text-sm text-gray-500 leading-relaxed px-2">
                 Karaoke Management System – A Comprehensive Solution for Managing Karaoke Rooms
               </p>
           </div>
         </li>
 
         <li class="sm:col-span-1">
-          <div class="relative block group overflow-hidden rounded-lg">
+          <div class="relative block group overflow-hidden rounded-lg bg-white shadow-md">
             <img src="assets/images/cakeShop.png" alt="Cake Shop E-Commerce"
-              class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90 group-hover:scale-105" />
+              class="object-cover w-full transition duration-500 aspect-square md:group-hover:opacity-90 md:group-hover:scale-105" />
+            <!-- Desktop Overlay (hidden on mobile) -->
             <div
-              class="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
+              class="hidden md:flex absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
               <h3 class="text-base sm:text-lg font-bold text-white mb-2">Cake Shop E-Commerce</h3>
               <p class="mt-2 text-xs sm:text-sm text-gray-200 leading-relaxed">
                 A cake shop e-commerce web application, allows customers to register, log in, place and manage orders, while also providing an admin interface for managing products and orders. Built with Spring MVC, Spring Security, Hibernate, SQL Server (Backend) and JSP, HTML/CSS, JavaScript (Frontend)
@@ -437,18 +476,37 @@
                 class="text-xs sm:text-sm font-semibold text-white hover:underline">View on GitHub</a>
               </div>
             </div>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            <!-- Mobile Info Card (visible on mobile, hidden on desktop) -->
+            <div class="md:hidden p-4 bg-white">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Cake Shop E-Commerce</h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                A cake shop e-commerce web application, allows customers to register, log in, place and manage orders, while also providing an admin interface for managing products and orders. Built with Spring MVC, Spring Security, Hibernate, SQL Server (Backend) and JSP, HTML/CSS, JavaScript (Frontend)
+              </p>
+              <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                Technologies: Java, Spring Framework (MVC, Security, JDBC, ORM/Hibernate), JSP, HTML, CSS, SQL Server, Jakarta Servlet, Hibernate ORM
+              </p>
+              <div class="mt-4">
+                <a href="https://github.com/phandinhthai012/TheCakeShop-LTWWW" target="_blank"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-gray-700 hover:underline">
+                  View on GitHub
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Title for desktop -->
+            <p class="hidden md:block mt-3 text-sm text-gray-500 leading-relaxed px-2">
                 Cake Shop E-Commerce – A Comprehensive Online Platform for Cake Shopping
               </p>
           </div>
         </li>
 
         <li class="sm:col-span-1 lg:col-span-2 lg:row-span-2">
-          <div class="relative block group overflow-hidden rounded-lg h-full">
+          <div class="relative block group overflow-hidden rounded-lg h-full bg-white shadow-md">
             <img src="assets/images/idev.png" alt="iDev4rum – IUH Developers Forum"
-              class="object-cover w-full h-full transition duration-500 group-hover:opacity-90 group-hover:scale-105" />
+              class="object-cover w-full h-full transition duration-500 md:group-hover:opacity-90 md:group-hover:scale-105" />
+            <!-- Desktop Overlay (hidden on mobile) -->
             <div
-              class="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
+              class="hidden md:flex absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto">
               <h3 class="text-base sm:text-lg font-bold text-white mb-2">iDev4rum – IUH Developers Forum</h3>
               <p class="mt-2 text-xs sm:text-sm text-gray-200 leading-relaxed">
                 Technology forum for students to share information, use Node.js, Next.js, React, MongoDB and apply microservices architecture.
@@ -460,7 +518,25 @@
                 <a href="https://github.com/phandinhthai012/iDevForum-KTPM" target="_blank" class="text-xs sm:text-sm font-semibold text-white hover:underline">View Source</a>
               </div>
             </div>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            <!-- Mobile Info Card (visible on mobile, hidden on desktop) -->
+            <div class="md:hidden p-4 bg-white">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">iDev4rum – IUH Developers Forum</h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Technology forum for students to share information, use Node.js, Next.js, React, MongoDB and apply microservices architecture.
+              </p>
+              <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                Technologies: NodeJS, NextJS, React, MongoDB, Redis, RabbitMQ, Docker, TailwindCSS, GitLab CI/CD
+              </p>
+              <div class="mt-4">
+                <a href="https://github.com/phandinhthai012/iDevForum-KTPM" target="_blank" 
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-gray-700 hover:underline">
+                  View Source
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Title for desktop -->
+            <p class="hidden md:block mt-3 text-sm text-gray-500 leading-relaxed px-2">
                 iDev4rum – IUH Developers Forum – A Technology Forum for Students
               </p>
           </div>
